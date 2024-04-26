@@ -31,4 +31,3 @@ export const sha256 = (data: Uint8Array) => {
   do d.setUint32(z, a[y]); while (z += 4, ++y < 8);
   return b.slice(0, 32);
 };
-
