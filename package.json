@@ -1,8 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "@nyoon/sha256",
-  "version": "0.3.2",
-  "repository": "github:nathanielyoon/sha256",
+  "version": "0.3.3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanielyoon/sha256.git"
+  },
   "type": "module",
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
