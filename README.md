@@ -1,7 +1,7 @@
 # SHA-256
 
 ```sh
-npm i @nyoon/sha256 # 985 bytes
+npm i @nyoon/sha256 # 985b mini/gzip
 ```
 
 ```ts
