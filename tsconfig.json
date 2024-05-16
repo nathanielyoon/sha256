@@ -1,8 +1,18 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
+  "include": ["./src/*"],
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",
-    "strict": true
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "outDir": "./dist",
+    "declaration": true
   }
 }
