@@ -10,3 +10,12 @@ test("nist", ({ expect }) => {
     expect(sha256(h_u(a[1]))).toStrictEqual(h_u(a[2]));
   }
 });
+
+test("webcrypto", async ({ expect }) => {
+  const a = new Uint8Array(0x1000);
+  for (let z = 0, b; z < a.length; ++z) {
+    expect(sha256(b = crypto.getRandomValues(a.subarray(0, z)))).toStrictEqual(
+      new Uint8Array(await crypto.subtle.digest("SHA-256", b)),
+    );
+  }
+});
