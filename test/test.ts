@@ -2,7 +2,7 @@ import { assertEquals } from "@std/assert";
 import { sha256 } from "../main.ts";
 
 Deno.test(async function nist_sha256() {
-  const path = import.meta.url.slice(0, -8);
+  const path = import.meta.url.slice(7, -8);
   const nist_short = await Deno.readTextFile(path + "/nist_short.txt");
   const nist_long = await Deno.readTextFile(path + "/nist_long.txt");
   const nist = nist_short + nist_long;
