@@ -30,16 +30,16 @@ const mix = (use: Uint32Array, from: DataView, at: number, to: Uint32Array) => {
 };
 /** Hashes with {@link https://w.wiki/KgC | SHA-256}. */
 export const sha256 = (message: Uint8Array) => {
-  const a = new Uint32Array(IV.subarray(64)), d = new Uint32Array(80);
-  const e = new Uint8Array(64), f = message.length;
-  let g = new DataView(message.buffer, message.byteOffset), z = 0, y = 0;
-  while (z < f) {
-    const j = Math.min(64 - y, f - z);
-    if (j !== 64) e.set(message.subarray(z, z += j)), y += j;
-    else do mix(d, g, z, a), z += 64; while (f - z >= 64);
+  const a = new Uint32Array(IV.subarray(64)), b = new Uint32Array(80);
+  const c = new Uint8Array(64), d = message.length;
+  let e = new DataView(message.buffer, message.byteOffset), z = 0, y = 0;
+  while (z < d) {
+    const f = Math.min(64 - y, d - z);
+    if (f !== 64) c.set(message.subarray(z, z += f)), y += f;
+    else do mix(b, e, z, a), z += 64; while (d - z >= 64);
   }
-  g = new DataView(e.buffer), e[y] = 128, 64 - ++y < 8 && mix(d, g, y = 0, a);
-  e.fill(0, y), g.setBigUint64(56, BigInt(f) << 3n), mix(d, g, y = 0, a);
-  do g.setUint32(y << 2, a[y]); while (++y < 8);
-  return new Uint8Array(e.subarray(0, 32));
+  e = new DataView(c.buffer), c[y] = 128, 64 - ++y < 8 && mix(b, e, y = 0, a);
+  c.fill(0, y), e.setBigUint64(56, BigInt(d) << 3n), mix(b, e, y = 0, a);
+  do e.setUint32(y << 2, a[y]); while (++y < 8);
+  return new Uint8Array(c.subarray(0, 32));
 };
