@@ -1,3 +1,3 @@
 # sha256
 
-sha256 hash. 1kb min+gzip.
+sha256 hash. tests from nist. 1kb min+gzip.
